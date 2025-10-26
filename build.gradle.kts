@@ -8,15 +8,17 @@ plugins {
     id("com.gradleup.nmcp") version "1.2.0"
 }
 
+val originalVersion = "0.9.0"
+
 group = "dev.reformator.kotlin-metadata-jvm-repack"
-version = "0.9.0"
+version = "$originalVersion-1"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:$version")
+    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:$originalVersion")
 }
 
 java {
