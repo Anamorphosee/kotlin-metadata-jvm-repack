@@ -1,0 +1,1 @@
+rootProject.name = "kotlin-metadata-jvm-repack"
