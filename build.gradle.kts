@@ -11,7 +11,7 @@ plugins {
 val originalVersion = "0.9.0"
 
 group = "dev.reformator.kotlin-metadata-jvm-repack"
-version = "$originalVersion-2"
+version = "$originalVersion-3"
 
 repositories {
     mavenCentral()
@@ -42,14 +42,17 @@ afterEvaluate {
 }
 
 tasks.shadowJar {
+    failOnDuplicateEntries = true
+    mergeServiceFiles()
     archiveClassifier = ""
     relocate("kotlinx.metadata", "dev.reformator.kmetarepack")
-    mergeServiceFiles()
+    relocate("dummy", "dev.reformator.kmetarepack")
     dependencies {
         include(dependency("org.jetbrains.kotlinx:kotlinx-metadata-jvm"))
     }
     excludes.remove("module-info.class")
     exclude("**/_dummy.class")
+    exclude("dummy/**")
 }
 
 val mavenPublicationName = "maven"
