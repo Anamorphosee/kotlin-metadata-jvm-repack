@@ -11,7 +11,7 @@ plugins {
 val originalVersion = "0.9.0"
 
 group = "dev.reformator.kotlin-metadata-jvm-repack"
-version = "$originalVersion-1"
+version = "$originalVersion-2"
 
 repositories {
     mavenCentral()
